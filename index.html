@@ -10,27 +10,37 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
         }
 
+        .resume-container,
+        .left-section,
+        .right-section {
+            page-break-inside: avoid;
+        }
+
         .resume-container {
             display: flex;
-            width: 1050px;
+            width: 100%;
             background: #fff;
+            max-width: 1100px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            overflow: hidden;
+            margin: auto;
         }
 
         .left-section {
             background: #2c3e50;
             color: white;
             padding: 20px;
-            width: 30%;
+            width: 35%;
             text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
 
         .left-section h1 {
@@ -116,7 +126,6 @@
             font-size: 16px;
             letter-spacing: 0.3px;
             color: rgb(224, 224, 224);
-            ;
         }
 
         .languages {
@@ -151,7 +160,7 @@
 
         .right-section {
             padding: 30px;
-            width: 60%;
+            width: 65%;
         }
 
         .right-section h2 {
@@ -219,20 +228,63 @@
             font-weight: bold;
             letter-spacing: 0.5px;
         }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
 
-        .download-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            .download-btn {
+                display: none;
+                /* button hide in PDF */
+            }
+
+            .resume-container {
+                width: 1100px;
+                box-shadow: none;
+                border-radius: 0;
+            }
         }
 
-        .download-btn:hover {
-            background: #0056b3;
+        /* Media Curies */
+
+        @media (max-width: 768px) {
+            .resume-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100% !important;
+            }
+
+            .left-section {
+                width: 95%;
+                text-align: center;
+                border-radius: 0;
+                border-top-left-radius: 8px!important;
+                border-top-right-radius: 8px!important;
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            .right-section {
+                width: 95% !important;
+            }
+
+            .media {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .location {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .left-section ul {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
@@ -309,7 +361,8 @@
                 <p class="para">I am a skilled Front-End Developer & Webflow Developer/Designer with 4 years of
                     experience in
                     building
-                    modern, responsive, and user-friendly websites. I specialize in React.js, Next.js, TypeScript, JavaScript HTML5, CSS3,
+                    modern, responsive, and user-friendly websites. I specialize in React.js, Next.js, TypeScript,
+                    JavaScript, HTML5, CSS3,
                     Bootstrap5, Tailwind CSS,
                     Webflow, and WordPress, creating visually appealing and high-performing web solutions. I have
                     expertise in CMS development, SEO optimization, and AI integration, helping businesses to improve
@@ -325,7 +378,8 @@
                 </div>
                 <p class="para">Experienced Front-End Developer with 4 years of expertise in building responsive,
                     high-performance
-                    web applications. Proficient in HTML5, CSS3, JavaScript, React.js, Next.js, TypeScript, Tailwind Css, Bootstrap5,
+                    web applications. Proficient in HTML5, CSS3, JavaScript, React.js, Next.js, TypeScript, Tailwind
+                    Css, Bootstrap5,
                     WordPress, and Webflow,
                     with skills in CMS integration, animations, and AI-powered solutions.</p>
                 <h4>Webflow Developer - Techzoid</h4>
@@ -345,7 +399,8 @@
                     <p><i>04/2021 - 10/2021</i></p>
                 </div>
                 <p class="para">Certified in Web Development , demonstrating expertise in HTML5, CSS3, Bootstrap5,
-                    JavaScript, React.js, Next.js, TypeScript, Tailwind CSS and WordPress. Skilled in building responsive, high-performance
+                    JavaScript, React.js, Next.js, TypeScript, Tailwind CSS and WordPress. Skilled in building
+                    responsive, high-performance
                     websites , optimizing UI/UX, and integrating CMS solutions.</p>
                 <div class="location">
                     <h5>Webflow Development</h5>
@@ -371,5 +426,8 @@
             </div>
         </div>
     </div>
+       
+
 </body>
+
 </html>
